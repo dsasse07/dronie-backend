@@ -6,11 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(
-  username: "Ian",
-  password: "123",
-  bio: "Lead Instructor",
-  avatar: "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
-)
+# User.create(
+#   first_name: "Danny",
+#   last_name: "Sasse",
+#   username: "dsasse",
+#   password: "123",
+#   bio: "Aerial Photography Enthusiast",
+#   avatar: "https://randomuser.me/api/portraits/med/men/75.jpg",
+#   phone: "609-433-2308",
+#   email: "dsasse0&@gmail.com"
+# )
 
 puts "✅"

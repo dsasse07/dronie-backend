@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_191101) do
     t.string "username"
     t.string "password_digest"
     t.text "bio"
-    t.string "avatar"
+    t.jsonb "avatar"
     t.string "phone"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
