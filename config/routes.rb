@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   post '/posts/new', to: 'posts#create'
   get '/posts:id', to: 'posts#show'
   
+  post '/comments/new', to: 'comments#create'
+  delete '/comments/:id', to: 'comments#destroy'
+
+  post '/likes/new', to: 'likes#create'
+  delete 'likes/:id', to: 'likes#destroy'
 
 end
