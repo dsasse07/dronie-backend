@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     post = Post.find( params[:post_id] )
     if post
       comment = Comment.create( comment_params )
-      render json: post, status: :created
+      render json: {post: PostSerializer.new(post), comment: comment} , status: :created
     else
       render json: { errors: comment.errors.full_messages }, status: :unprocessable_entity
     end
@@ -13,8 +13,8 @@ class CommentsController < ApplicationController
 
 
   def destroy
-    post = Post.find( params[:id] )
-    comment = Comment.find_by( post_id: params[:id], user_id: @current_user[:id] )
+    comment = Comment.find(params[:id])
+    post = comment.post
     comment.destroy
     render json: post
   end
