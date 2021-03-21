@@ -6,4 +6,4 @@ class JsonWebToken
   def self.decode(token)
     JWT.decode(token, ENV['JWT_SECRET'], true, { algorithm: 'HS256' })[0]
   end
-end
+end 
