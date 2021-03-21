@@ -2,7 +2,11 @@ class PostsController < ApplicationController
   before_action :authenticate, only: [:create]
 
   def index 
-
+    # fetched_count is the number of items previously fetched by user
+    start_index = params[:fetched_count] ? params[:fetched_count].to_i : 0
+    limit = params[:limit] ? params[:limit].to_i : 10
+    posts = Post.next_slice(start_index, limit)
+    render json: posts
   end
 
   def create
