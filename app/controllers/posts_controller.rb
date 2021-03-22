@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate, only: [:create]
+  before_action :authenticate, only: [:create, :show]
 
   def index 
     # fetched_count is the number of items previously fetched by user
@@ -19,6 +19,15 @@ class PostsController < ApplicationController
       end
     else
       render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def show
+    post = Post.find( params[:id] )
+    if post
+      render json: post
+    else
+      render json: {errors: post.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
