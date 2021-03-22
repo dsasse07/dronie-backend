@@ -7,4 +7,13 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :commented_posts, through: :comments, source: :post
+
+  def by_created_at
+    self.posts.sort_by(&:created_at).reverse
+  end
+
+  def next_posts_slice(start_index, limit)
+    self.by_created_at.slice(start_index, limit)
+  end
+
 end
