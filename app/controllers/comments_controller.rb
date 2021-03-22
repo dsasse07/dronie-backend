@@ -21,7 +21,6 @@ class CommentsController < ApplicationController
     else
       render json: { errors: comment.errors.full_messages }, status: :unprocessable_entity
     end
-
   end
 
   private
