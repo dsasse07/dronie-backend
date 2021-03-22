@@ -34,6 +34,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    user = User.find( params[:id] )  
+    if user && user.authenticate(params[:password])
+      user.update(user_params)
+      if params[:new_password].length > 0
+        user.update( password: params[:new_password] )
+      end
+      render json: user
+    else
+      render json: { errors: ["Invalid password"] }, status: :unauthorized
+    end
+  end
+
   def posts
     user = User.find_by( username: params[:username] )
     if user
@@ -48,7 +61,6 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find( params[:id] )
-    # byebug
     if user && user.authenticate(params[:password])
       user.destroy
       render json: user

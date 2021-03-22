@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/posts', to: 'posts#index'
   post '/posts/new', to: 'posts#create'
   get '/posts/:id', to: 'posts#show'
+  patch '/posts/:id', to: 'posts#update'
   delete '/posts/:id', to: 'posts#destroy'
   
   post '/comments/new', to: 'comments#create'
