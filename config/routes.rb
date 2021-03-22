@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get '/me', to: 'users#autologin'
   post '/login', to: 'users#login'
   post '/signup', to: 'users#create'
-  get '/users/:id/posts', to: 'users#posts'
+  get '/users/:username/posts', to: 'users#posts'
   get '/users/:username', to: 'users#show'
   patch '/users/:id', to: 'users#update'
-  delete '/users:id', to: 'users#destroy'
+  delete '/users/:id', to: 'users#destroy'
 
 
   get '/posts', to: 'posts#index'

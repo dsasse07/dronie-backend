@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate, only: [:autologin, :update, :show, :posts]
+  before_action :authenticate, only: [:autologin, :update, :show, :posts, :destroy]
 
   def autologin
     render json: @current_user
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def posts
-    user = User.find( params[:id] )
+    user = User.find_by( username: params[:username] )
     if user
       start_index = params[:fetched_count] ? params[:fetched_count].to_i : 0
       limit = params[:limit] ? params[:limit].to_i : 20
@@ -44,7 +44,17 @@ class UsersController < ApplicationController
     else
       render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
     end
+  end
 
+  def destroy
+    user = User.find( params[:id] )
+    # byebug
+    if user && user.authenticate(params[:password])
+      user.destroy
+      render json: user
+    else
+      render json: { errors: ["Invalid password"] }, status: :unauthorized
+    end
   end
 
   private
