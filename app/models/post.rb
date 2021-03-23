@@ -22,7 +22,7 @@ class Post < ApplicationRecord
     posts = userFollows.map do |follow| 
       Post.where( user_id: follow.following_id )
     end
-    posts.flatten
+    posts.flatten.sort_by{ |post| post.created_at}.reverse
   end
 
 end 
