@@ -17,4 +17,7 @@
 #   email: "dsasse0&@gmail.com"
 # )
 
+
+# Cloudinary::Api.resources(max_length: 100)
+
 puts "✅"
