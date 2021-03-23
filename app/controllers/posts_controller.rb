@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    if @current_user.id.to_s == params[:user_id]
+    if @current_user.id.to_s == params[:user_id] 
       post = Post.create(post_params)
       if post.valid?
         render json: post
