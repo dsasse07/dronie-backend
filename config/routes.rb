@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   post '/likes/new', to: 'likes#create'
   delete 'likes/:id', to: 'likes#destroy'
 
+  post '/follows', to: 'follows#create'
+  delete '/follows/:id', to: 'follows#destroy'
+
 end
