@@ -4,9 +4,15 @@ class PostsController < ApplicationController
   def index 
     # fetched_count is the number of items previously fetched by user
     start_index = params[:fetched_count] ? params[:fetched_count].to_i : 0
-    limit = params[:limit] ? params[:limit].to_i : 10
-    posts = Post.next_slice(start_index, limit)
+    limit = params[:limit] ? params[:limit].to_i : 5
+    
+    if params[:display] == "followed_by"
+      posts = Post.followed_by(params[:user_id]).slice(start_index, limit)
+    else 
+      posts = Post.by_created_at(start_index, limit)
+    end
     render json: posts
+  
   end
 
   def create

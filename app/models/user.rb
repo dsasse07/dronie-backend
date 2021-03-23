@@ -25,4 +25,8 @@ class User < ApplicationRecord
     self.by_created_at.slice(start_index, limit)
   end
 
+  def followed_by?(user_id)
+    Follow.find_by( following_id: self.id, user_id: user_id )
+  end
+
 end
