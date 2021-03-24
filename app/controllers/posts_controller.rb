@@ -63,6 +63,28 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    start_index = params[:fetched_count] ? params[:fetched_count].to_i : 0
+    limit = params[:limit] ? params[:limit].to_i : 30
+    case params[:filter]
+      when "users"
+        users = User.where("username ILIKE ?", "%#{params[:q]}%").limit(limit).offset(start_index)
+        render json: users
+      when "description"
+        posts = Post.where( "description ILIKE ?", "%#{params[:q]}%").limit(limit).offset(start_index)
+        render json: posts
+      when "location"
+        posts = Post.where( "location ILIKE ?", "%#{params[:q]}%").limit(limit).offset(start_index)
+        render json: posts
+      when "tags"
+        tags = Tag.where("name ILIKE ?", "%#{params[:q]}%")
+        posts = tags.map{ |tag| tag.posts}
+        render json: posts.flatten
+      else
+        render json: { errors: ["Invalid Search"] }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def post_params

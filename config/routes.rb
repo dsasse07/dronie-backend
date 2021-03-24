@@ -28,4 +28,6 @@ Rails.application.routes.draw do
 
   get '/tags', to: 'tags#index'
 
+  get '/search', to: 'posts#search'
+
 end
