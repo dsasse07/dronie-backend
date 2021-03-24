@@ -4,4 +4,5 @@ class PostSerializer < ActiveModel::Serializer
   has_many :comments
   has_many :likes
   has_many :commentors
+  has_many :tags
 end

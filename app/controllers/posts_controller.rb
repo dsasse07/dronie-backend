@@ -16,15 +16,22 @@ class PostsController < ApplicationController
   end
 
   def create
+    byebug
     if @current_user.id.to_s == params[:user_id] 
       post = Post.create(post_params)
       if post.valid?
+        if params[:tags].count > 0
+          params[:tags].each do |tag|
+            new_tag = Tag.find_or_create_by(name: tag)
+            post.tags << new_tag
+          end
+        end
         render json: post
       else
         render json: { errors: post.errors.full_messages }, status: :unprocessable_entity
       end
     else
-      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: ["Unauthorized"]}, status: :unprocessable_entity
     end
   end
 
