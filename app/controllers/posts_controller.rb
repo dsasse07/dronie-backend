@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    byebug
     if @current_user.id.to_s == params[:user_id] 
       post = Post.create(post_params)
       if post.valid?
