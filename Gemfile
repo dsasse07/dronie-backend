@@ -47,4 +47,4 @@ gem 'jwt'
 gem 'uri' 
 gem 'cloudinary'
 
-gem 'mimemagic', '0.3.6'
+gem 'mimemagic', '~> 0.3.6'
