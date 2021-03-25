@@ -46,3 +46,5 @@ gem 'active_model_serializers'
 gem 'jwt'
 gem 'uri' 
 gem 'cloudinary'
+
+gem 'mimemagic', '0.3.6'
