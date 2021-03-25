@@ -14,7 +14,7 @@ User.create(
   bio: "Aerial Photography Enthusiast",
   avatar: "[{\"asset_id\":\"d15f1713e8e60eb9826b90df3db83bf6\",\"public_id\":\"testing/2020-04-01_eornjm\",\"version\":1616534271,\"version_id\":\"d0ee1abff30efd1d22eb987ec4ca8d12\",\"signature\":\"f2e3d75c9ff023b88d0eb28d6edbbf28d1855b93\",\"width\":280,\"height\":280,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-03-23T21:17:51Z\",\"tags\":[],\"bytes\":19532,\"type\":\"upload\",\"etag\":\"7e98fbc14bbff959155648aa7f19e028\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1616534271/testing/2020-04-01_eornjm.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1616534271/testing/2020-04-01_eornjm.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"2020-04-01\"}]" ,
   phone: "609-433-2308",
-  email: "dsasse07@gmail.com"
+  email: "dsasse07@gmail.com" 
 )
 
 
