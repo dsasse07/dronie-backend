@@ -33,4 +33,5 @@ Rails.application.routes.draw do
 
   get '/search', to: 'posts#search'
 
+  post '/messages', to: 'messages#create'
 end
