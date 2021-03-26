@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_162114) do
+ActiveRecord::Schema.define(version: 2021_03_25_211823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chat_participations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "chat_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chat_id"], name: "index_chat_participations_on_chat_id"
+    t.index ["user_id"], name: "index_chat_participations_on_user_id"
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -23,13 +37,6 @@ ActiveRecord::Schema.define(version: 2021_03_25_162114) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "conversations", force: :cascade do |t|
-    t.integer "sender_id", null: false
-    t.integer "recipient_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "follows", force: :cascade do |t|
@@ -49,13 +56,13 @@ ActiveRecord::Schema.define(version: 2021_03_25_162114) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.text "body"
     t.bigint "user_id", null: false
-    t.bigint "conversation_id", null: false
-    t.boolean "read", default: false
+    t.bigint "chat_id", null: false
+    t.text "content"
+    t.boolean "read"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -98,11 +105,13 @@ ActiveRecord::Schema.define(version: 2021_03_25_162114) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "chat_participations", "chats"
+  add_foreign_key "chat_participations", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
-  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"

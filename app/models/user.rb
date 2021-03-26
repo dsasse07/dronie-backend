@@ -17,6 +17,17 @@ class User < ApplicationRecord
   has_many :following_relationships, foreign_key: :user_id, class_name: "Follow", dependent: :destroy
   has_many :following, through: :following_relationships, source: :following
 
+
+  has_many :chat_participations
+  has_many :chats, through: :chat_participations
+
+  has_many :messages
+
+  # has_many :chats, through: :participants
+
+  # has_many :messages, dependent: :destroy
+  
+
   def by_created_at
     self.posts.sort_by(&:created_at).reverse
   end

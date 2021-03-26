@@ -1,10 +1,10 @@
 class CreateMessages < ActiveRecord::Migration[6.1]
   def change
     create_table :messages do |t|
-      t.text :body
       t.belongs_to :user, null: false, foreign_key: true
-      t.belongs_to :conversation, null: false, foreign_key: true
-      t.boolean :read, default: false
+      t.belongs_to :chat, null: false, foreign_key: true
+      t.text :content
+      t.boolean :read
 
       t.timestamps
     end

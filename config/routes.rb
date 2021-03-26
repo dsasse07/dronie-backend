@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :chat_participations
   resources :messages
-  resources :conversations
+  resources :chats
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get '/me', to: 'users#autologin'
