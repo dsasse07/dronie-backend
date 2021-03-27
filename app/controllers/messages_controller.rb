@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :authenticate, only: [:create]
+  before_action :authenticate, only: [:create, :read]
 
   def create
     other_user = User.find_by(username: params[:other_username])
@@ -8,8 +8,18 @@ class MessagesController < ApplicationController
     else 
       chat = Chat.find_by(id: params[:chat_id]) || create_chat(other_user)
       message = create_message(chat)
+      ChatChannel.broadcast_to chat.chat_participations[0].user, ChatSerializer.new(chat)
+      ChatChannel.broadcast_to chat.chat_participations[1].user, ChatSerializer.new(chat)
       render json: chat
     end
+  end
+
+  def read
+    messages = params[:messages].map{ |message| Message.find_by(id: message[:id]) }
+    messages.map{ |message| Message.update(read: true) }
+    chat = messages[0].chat
+    ChatChannel.broadcast_to chat.chat_participations[0].user, ChatSerializer.new(chat)
+    ChatChannel.broadcast_to chat.chat_participations[1].user, ChatSerializer.new(chat)
   end
 
   private

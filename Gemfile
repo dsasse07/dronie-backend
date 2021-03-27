@@ -47,4 +47,9 @@ gem 'jwt'
 gem 'uri' 
 gem 'cloudinary'
 
+<<<<<<< Updated upstream
 gem 'mimemagic', '>= 0.3.7'
+=======
+gem 'mimemagic', '0.3.6'
+gem "marcel", ">= 0.3.3"
+>>>>>>> Stashed changes

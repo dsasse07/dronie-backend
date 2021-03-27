@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :chat_participations
-  resources :messages
-  resources :chats
+  # resources :chat_participations
+  # resources :messages
+  # resources :chats
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get '/me', to: 'users#autologin'
@@ -34,4 +34,7 @@ Rails.application.routes.draw do
   get '/search', to: 'posts#search'
 
   post '/messages', to: 'messages#create'
+  patch '/messages', to: 'messages#read'
+
+  mount ActionCable.server => '/cable'
 end

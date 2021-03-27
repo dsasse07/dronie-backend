@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate, only: [:autologin, :update, :show, :posts, :destroy]
 
   def autologin
+    # byebug
+    # session[:user_id] = @current_user.id
     render json: @current_user
   end
 
@@ -9,6 +11,7 @@ class UsersController < ApplicationController
     user = User.create(user_params)
     if user.valid?
       token = JsonWebToken.encode({ user_id: user.id })
+      # session[:user_id] = @current_user.id
       render json: { user: UserSerializer.new(user), token: token}, status: :created
     else
       render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
@@ -19,6 +22,7 @@ class UsersController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       token = JsonWebToken.encode({ user_id: user.id })
+      # session[:user_id] = @current_user.id
       render json: { user: UserSerializer.new(user), token: token }
     else
       render json: { errors: ["Invalid username or password"] }, status: :unauthorized
