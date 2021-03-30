@@ -37,7 +37,7 @@ Rails.application.configure do
   config.web_socket_server_url = "wss://dronie-backend.herokuapp.com/cable"
   config.action_cable.mount_path = '/cable'
   config.action_cable.url = 'wss://dronie-backend.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = [ 'https://localhost:8100' , /http:\/\/localhost:8100.*/ ]
+  config.action_cable.allowed_request_origins = [ 'https://localhost:8100' , /http:\/\/localhost:8100.*/, 'https://dronie.netlify.app', /http:\/\/dronie.netlify.app.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
