@@ -10,6 +10,6 @@ class Chat < ApplicationRecord
     values.map do |participant|
       { id: participant[0] , username: participant[1], avatar: participant[2] }
     end 
-  end
+  end 
 
 end 
