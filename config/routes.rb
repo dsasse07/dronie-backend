@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   delete '/posts/:id', to: 'posts#destroy'
   
   post '/comments/new', to: 'comments#create'
-  delete '/comments/:id', to: 'comments#destroy'
+  delete '/comments/:id', to: 'comments#destroy' 
 
   post '/likes/new', to: 'likes#create'
   delete 'likes/:id', to: 'likes#destroy'
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get '/search', to: 'posts#search'
 
   post '/messages', to: 'messages#create'
-  patch '/messages', to: 'messages#read'
+  patch '/messages', to: 'messages#read' 
 
   mount ActionCable.server => '/cable'
 end
