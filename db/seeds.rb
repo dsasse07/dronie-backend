@@ -152,6 +152,11 @@ def generate_likes(user_count, post)
     Like.create(post: post, user: User.find_by(id: liker_id) )
   end
 end
+
+def update_created_at(post)
+  post.update( created_at: post.date_taken )
+end
+
 ############################################
 post1 = Post.create(
   user: User.find( rand(1..user_count) ),
@@ -522,7 +527,7 @@ post24 = Post.create(
   images: "[{\"asset_id\":\"d455e91efcd5f6fd38c95b1f6f4291e1\",\"public_id\":\"testing/1.3belford_i9j0ey\",\"version\":1617034526,\"version_id\":\"ff2dd00311e685eb37f69f2c8b89cbc8\",\"signature\":\"83e523762b15ddcfe88b50b9b1b4ea187cedc486\",\"width\":969,\"height\":545,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-03-29T16:15:26Z\",\"tags\":[],\"bytes\":164455,\"type\":\"upload\",\"etag\":\"4f2f2a90e7f2a8f9ad2bd7af5fb84ea6\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617034526/testing/1.3belford_i9j0ey.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617034526/testing/1.3belford_i9j0ey.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"1.3belford\"}]" ,
   description: "Found this poor old boat on the shores of Belford this morning. I bet it has a lot of stories",
   location: "Belford, NJ",
-  date_taken: "",
+  date_taken: "2021-01-03",
 )
 tags24 = [  
   "boat"
@@ -1652,11 +1657,14 @@ Post.all.each do |post|
 end
 
 #######################################################################################
-##############################       Seed Chats      ##################################
+############################       Update Dates      ##################################
 #######################################################################################
 
+Post.all.each do |post|
+  update_created_at(post)
+end
 
-
+puts "Dates updated"
 
 
 

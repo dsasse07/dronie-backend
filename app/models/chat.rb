@@ -12,4 +12,4 @@ class Chat < ApplicationRecord
     end 
   end
 
-end
+end 
