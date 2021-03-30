@@ -66,6 +66,9 @@ class UsersController < ApplicationController
   def destroy
     user = User.find( params[:id] )
     if user && user.authenticate(params[:password])
+      user.chats.each do |chat|
+        chat.destroy
+      end
       user.destroy
       render json: user
     else

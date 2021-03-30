@@ -18,10 +18,10 @@ class User < ApplicationRecord
   has_many :following, through: :following_relationships, source: :following
 
 
-  has_many :chat_participations
+  has_many :chat_participations, dependent: :destroy
   has_many :chats, through: :chat_participations
 
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
   # has_many :chats, through: :participants
 
