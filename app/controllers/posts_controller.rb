@@ -65,7 +65,7 @@ class PostsController < ApplicationController
 
   def search
     start_index = params[:fetched_count] ? params[:fetched_count].to_i : 0
-    limit = params[:limit] ? params[:limit].to_i : 30
+    limit = params[:limit] ? params[:limit].to_i : 20
     case params[:filter]
       when "users"
         users = User.where("username ILIKE ?", "%#{params[:q]}%").limit(limit).offset(start_index)
