@@ -48,3 +48,4 @@ gem 'uri'
 gem 'cloudinary'
 
 gem 'mimemagic', '>= 0.3.7'
+gem 'faker'

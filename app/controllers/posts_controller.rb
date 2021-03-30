@@ -19,12 +19,18 @@ class PostsController < ApplicationController
     if @current_user.id.to_s == params[:user_id] 
       post = Post.create(post_params)
       if post.valid?
+        if params[:tags].count > 0
+          params[:tags].each do |tag|
+            new_tag = Tag.find_or_create_by(name: tag)
+            post.tags << new_tag
+          end
+        end
         render json: post
       else
         render json: { errors: post.errors.full_messages }, status: :unprocessable_entity
       end
     else
-      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: ["Unauthorized"]}, status: :unprocessable_entity
     end
   end
 
@@ -54,6 +60,28 @@ class PostsController < ApplicationController
       render json: post
     # else
     #   render json: { errors: post.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def search
+    start_index = params[:fetched_count] ? params[:fetched_count].to_i : 0
+    limit = params[:limit] ? params[:limit].to_i : 20
+    case params[:filter]
+      when "users"
+        users = User.where("username ILIKE ?", "%#{params[:q]}%").limit(limit).offset(start_index)
+        render json: users
+      when "description"
+        posts = Post.where( "description ILIKE ?", "%#{params[:q]}%").limit(limit).offset(start_index)
+        render json: posts
+      when "location"
+        posts = Post.where( "location ILIKE ?", "%#{params[:q]}%").limit(limit).offset(start_index)
+        render json: posts
+      when "tags"
+        tags = Tag.where("name ILIKE ?", "%#{params[:q]}%")
+        posts = tags.map{ |tag| tag.posts}
+        render json: posts.flatten
+      else
+        render json: { errors: ["Invalid Search"] }, status: :unprocessable_entity
     end
   end
 

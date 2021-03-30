@@ -8,14 +8,13 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :commentors, through: :comments, source: :user
 
+  has_many :post_tags, dependent: :destroy
+  has_many :tags, through: :post_tags
+
 
   def self.by_created_at(start_index, limit)
     Post.order('created_at DESC').limit(limit).offset(start_index)
   end
-
-  # def self.next_slice(start_index, limit)
-  #   Post.by_created_at.slice(start_index, limit)
-  # end
 
   def self.followed_by(user_id)
     userFollows = Follow.where(user_id: user_id)
