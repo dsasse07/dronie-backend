@@ -49,7 +49,7 @@ The client interface connects to a Rails API server which is used to persist dat
 Pull requests are welcome. Please make sure that your PR is <a href="https://www.netlify.com/blog/2020/03/31/how-to-scope-down-prs/">well-scoped</a>. For major changes, please open an issue first to discuss what you would like to change.
 
 #### Known issues
-* <a href="https://github.com/dsasse07/dronie-backend/issues">Visit Issues Section</a>
+* <a href="https://github.com/dsasse07/dronie-backend/issues">Visit Issues Section</a> 
 
 #### Contributors
 <table>
