@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   delete '/comments/:id', to: 'comments#destroy' 
 
   post '/likes/new', to: 'likes#create'
-  delete 'likes/:id', to: 'likes#destroy'
+  delete 'likes/:id', to: 'likes#destroy' 
 
   post '/follows', to: 'follows#create'
   delete '/follows/:following_id', to: 'follows#destroy'
