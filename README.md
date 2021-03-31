@@ -32,7 +32,7 @@ The client interface connects to a Rails API server which is used to persist dat
 * Fork and clone the [client interface repo](https://github.com/dsasse07/dronie-frontend)  
 * `cd` into the backend directory
 * Run `bundle install` to install required gems
-* Run `rails db:create` to initialize a PostgreSQL if this is the first time running the app.
+* Run `rails db:create` to initialize a PostgreSQL if this is the first time running the app. 
 * Run `rails db:migrate` to build the database schema
 * Run `rails db:seed` to initialize the seed data if desired (not necessary)
 * Generate a secret to use for the Javascript Web Token encoding by running `rake secret` in the terminal.
