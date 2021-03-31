@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   delete 'likes/:id', to: 'likes#destroy' 
 
   post '/follows', to: 'follows#create'
-  delete '/follows/:following_id', to: 'follows#destroy'
+  delete '/follows/:following_id', to: 'follows#destroy'  
 
   get '/tags', to: 'tags#index'
 
