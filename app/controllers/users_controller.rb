@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     user = User.find_by( username: params[:username] )
     if user
       start_index = params[:fetched_count] ? params[:fetched_count].to_i : 0
-      limit = params[:limit] ? params[:limit].to_i : 15
+      limit = params[:limit] ? params[:limit].to_i : 12
       posts = user.next_posts_slice(start_index, limit)
       render json: posts
     else
