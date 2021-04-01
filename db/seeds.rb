@@ -17,7 +17,7 @@ danny = User.create(
   password: "123",
   bio: "Aerial Photography Enthusiast. Software Developer. Science Nerd.",
   avatar: "[{\"asset_id\":\"f86bfafa5710eabfd5a2d818424c4aaf\",\"public_id\":\"testing/20200216_173118_1_j9lcre\",\"version\":1617285578,\"version_id\":\"8c6b5eea8d20571630fa8ca90383d524\",\"signature\":\"4e5d53973866d2390e369f4abe4c436d9492e856\",\"width\":1348,\"height\":1348,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:59:38Z\",\"tags\":[],\"bytes\":368054,\"type\":\"upload\",\"etag\":\"4563e8892af2beab4d85e614879255eb\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617285578/testing/20200216_173118_1_j9lcre.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617285578/testing/20200216_173118_1_j9lcre.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"20200216_173118 1\"}]"  ,
-  phone: "609-433-2308",
+  phone: "609-433-2308", 
   email: "dsasse07@gmail.com" 
 )
 
