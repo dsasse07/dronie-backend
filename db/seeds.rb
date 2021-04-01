@@ -1631,7 +1631,7 @@ post95 = Post.create(
   date_taken: "2020-10-21",
 )
 tags95 = [  
-  "fallfoliage, mountains, windingroad, minnewaskastatepark"
+  "fallfoliage", "mountains", "windingroad", "minnewaskastatepark"
 ]
 generate_tags(post95, tags95)
 generate_likes(user_count, Post.last)
@@ -1644,7 +1644,7 @@ post96 = Post.create(
   date_taken: "2020-07-27",
 )
 tags96 = [  
-  "beach, beachday, surf, jerseyshore"
+  "beach", "beachday", "surf", "jerseyshore"
 ]
 generate_tags(post96, tags96)
 generate_likes(user_count, Post.last)
@@ -1657,7 +1657,7 @@ post97 = Post.create(
   date_taken: "2020-10-21",
 )
 tags97 = [  
-  "fallfoliage, mountains, bearmountain, sunrise"
+  "fallfoliage", "mountains", "bearmountain", "sunrise"
 ]
 generate_tags(post97, tags97)
 generate_likes(user_count, Post.last)
@@ -1670,7 +1670,7 @@ post98 = Post.create(
   date_taken: "2020-10-05",
 )
 tags98 = [  
-  "ladyliberty, nyc"
+  "ladyliberty", "nyc"
 ]
 generate_tags(post98, tags98)
 generate_likes(user_count, Post.last)
@@ -1683,7 +1683,7 @@ post99 = Post.create(
   date_taken: "2020-10-05",
 )
 tags94 = [  
-  "city, nyc"
+  "city", "nyc"
 ]
 generate_tags(post94, tags94)
 generate_likes(user_count, Post.last)
@@ -1697,7 +1697,7 @@ post100 = Post.create(
   date_taken: "2020-11-06",
 )
 tags100 = [  
-  "lighthouse, nyc, littleredlighthouse"
+  "lighthouse", "nyc", "littleredlighthouse"
 ]
 generate_tags(post100, tags100)
 generate_likes(user_count, Post.last)
@@ -1711,7 +1711,7 @@ post101 = Post.create(
   date_taken: "2020-10-21",
 )
 tags101 = [  
-  "sunrise, mountains, clouds"
+  "sunrise", "mountains", "clouds"
 ]
 generate_tags(post101, tags101)
 generate_likes(user_count, Post.last)
@@ -1725,7 +1725,7 @@ post102 = Post.create(
   date_taken: "2020-11-06",
 )
 tags102 = [  
-  "bridge, nyc, littleredlighthouse, lighthouse"
+  "bridge", "nyc", "littleredlighthouse", "lighthouse"
 ]
 generate_tags(post102, tags102)
 generate_likes(user_count, Post.last)
@@ -1739,7 +1739,7 @@ post103 = Post.create(
   date_taken: "2020-11-05",
 )
 tags103 = [  
-  "sunset, redskies, river"
+  "sunset", "redskies", "river"
 ]
 generate_tags(post103, tags103)
 generate_likes(user_count, Post.last)
