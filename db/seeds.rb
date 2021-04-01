@@ -10,16 +10,16 @@
 ###############################        Seed Users      ################################
 #######################################################################################
 
-# User.create(
-#   first_name: "Danny",
-#   last_name: "Sasse",
-#   username: "dsasse",
-#   password: "123",
-#   bio: "Aerial Photography Enthusiast",
-#   avatar: "[{\"asset_id\":\"d15f1713e8e60eb9826b90df3db83bf6\",\"public_id\":\"testing/2020-04-01_eornjm\",\"version\":1616534271,\"version_id\":\"d0ee1abff30efd1d22eb987ec4ca8d12\",\"signature\":\"f2e3d75c9ff023b88d0eb28d6edbbf28d1855b93\",\"width\":280,\"height\":280,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-03-23T21:17:51Z\",\"tags\":[],\"bytes\":19532,\"type\":\"upload\",\"etag\":\"7e98fbc14bbff959155648aa7f19e028\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1616534271/testing/2020-04-01_eornjm.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1616534271/testing/2020-04-01_eornjm.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"2020-04-01\"}]" ,
-#   phone: "609-433-2308",
-#   email: "dsasse07@gmail.com" 
-# )
+danny = User.create(
+  first_name: "Danny",
+  last_name: "Sasse",
+  username: "dsasse",
+  password: "123",
+  bio: "Aerial Photography Enthusiast. Software Developer. Science Nerd.",
+  avatar: "[{\"asset_id\":\"d15f1713e8e60eb9826b90df3db83bf6\",\"public_id\":\"testing/2020-04-01_eornjm\",\"version\":1616534271,\"version_id\":\"d0ee1abff30efd1d22eb987ec4ca8d12\",\"signature\":\"f2e3d75c9ff023b88d0eb28d6edbbf28d1855b93\",\"width\":280,\"height\":280,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-03-23T21:17:51Z\",\"tags\":[],\"bytes\":19532,\"type\":\"upload\",\"etag\":\"7e98fbc14bbff959155648aa7f19e028\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1616534271/testing/2020-04-01_eornjm.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1616534271/testing/2020-04-01_eornjm.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"2020-04-01\"}]" ,
+  phone: "609-433-2308",
+  email: "dsasse07@gmail.com" 
+)
 
 User.create(
   first_name: "Isaac",
@@ -1618,6 +1618,133 @@ generate_likes(user_count, Post.last)
 
 ############################################
 
+#######################################################################################
+############################       Seed My Posts Dates      ###########################
+#######################################################################################
+
+
+post95 = Post.create(
+  user: danny,
+  images: "[{\"asset_id\":\"ca4409d8fc947319cf78c1d461a3b912\",\"public_id\":\"testing/DJI_0273-HDR-Merge_hwobvn\",\"version\":1617283261,\"version_id\":\"daa22e75ecb878b1577b09378eec3237\",\"signature\":\"98ca67ad3ec560bcf046f4254a7dbc84bdffa2d7\",\"width\":2990,\"height\":3986,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:21:01Z\",\"tags\":[],\"bytes\":2036080,\"type\":\"upload\",\"etag\":\"06a65d6ce7bdd06d1a0a8ee9e442f88b\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617283261/testing/DJI_0273-HDR-Merge_hwobvn.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617283261/testing/DJI_0273-HDR-Merge_hwobvn.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"DJI_0273-HDR-Merge\"}]"  ,
+  description: "Hairpin turn at the East Trapps Trailhead in Minnewaska State Park, framed by the fall colors",
+  location: "Minnewaska State Park, NY",
+  date_taken: "2020-10-21",
+)
+tags95 = [  
+  "fallfoliage, mountains, windingroad, minnewaskastatepark"
+]
+generate_tags(post95, tags95)
+generate_likes(user_count, Post.last)
+
+post96 = Post.create(
+  user: danny,
+  images: "[{\"asset_id\":\"f82c705fde0a8dd21c558d07bed24613\",\"public_id\":\"testing/DJI_0292_jocwdt\",\"version\":1617283480,\"version_id\":\"17be6531ab60e7d0e5c6f352beaa6991\",\"signature\":\"e174d010d9e7eab89d8287ca73651c5c33d9f71b\",\"width\":6830,\"height\":5464,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:24:40Z\",\"tags\":[],\"bytes\":3343280,\"type\":\"upload\",\"etag\":\"c7c620e27330e56f6dd6314e6e647fa9\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617283480/testing/DJI_0292_jocwdt.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617283480/testing/DJI_0292_jocwdt.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"DJI_0292\"}]"  ,
+  description: "Surfers at dawn in Manasquan, NJ",
+  location: "Manasquan, NJ",
+  date_taken: "2020-07-27",
+)
+tags96 = [  
+  "beach, beachday, surf, jerseyshore"
+]
+generate_tags(post96, tags96)
+generate_likes(user_count, Post.last)
+
+post97 = Post.create(
+  user: danny,
+  images: "[{\"asset_id\":\"7ae6716cfec0b563d071aa51f92d1fca\",\"public_id\":\"testing/DJI_0465-HDR_jo5isn\",\"version\":1617283516,\"version_id\":\"e6c943731be3a1bf10c052e6ed116cb6\",\"signature\":\"181f0e90dd737b312293259222cf42eaf09b4423\",\"width\":3985,\"height\":2989,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:25:16Z\",\"tags\":[],\"bytes\":1212282,\"type\":\"upload\",\"etag\":\"b05471249afff9702f1ac199c53addae\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617283516/testing/DJI_0465-HDR_jo5isn.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617283516/testing/DJI_0465-HDR_jo5isn.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"DJI_0465-HDR\"}]"  ,
+  description: "Sunrise over the Hudson at Bear Mountain during the fall foliage season",
+  location: "Cornwall, NY",
+  date_taken: "2020-10-21",
+)
+tags97 = [  
+  "fallfoliage, mountains, bearmountain, sunrise"
+]
+generate_tags(post97, tags97)
+generate_likes(user_count, Post.last)
+
+post98 = Post.create(
+  user: danny,
+  images: "[{\"asset_id\":\"b1c083d097a5ce1c27d3ec28fb18d735\",\"public_id\":\"testing/DJI_0791-HDR_calrxk\",\"version\":1617283738,\"version_id\":\"7f20c1e656f90eb33b52f6c404000971\",\"signature\":\"4878f0b25ffd1e62c021f730ab1ecb4197678a2d\",\"width\":3192,\"height\":2554,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:28:58Z\",\"tags\":[],\"bytes\":598700,\"type\":\"upload\",\"etag\":\"288982d1a337247b5fb12c214394e29e\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617283738/testing/DJI_0791-HDR_calrxk.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617283738/testing/DJI_0791-HDR_calrxk.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"DJI_0791-HDR\"}]" ,
+  description: "The statue of liberty just after dawn",
+  location: "Jersey City, NJ",
+  date_taken: "2020-10-05",
+)
+tags98 = [  
+  "ladyliberty, nyc"
+]
+generate_tags(post98, tags98)
+generate_likes(user_count, Post.last)
+
+post99 = Post.create(
+  user: danny,
+  images: "[{\"asset_id\":\"76308c8761c8acf2a2864e5c8a249291\",\"public_id\":\"testing/DJI_0854_m6jb89\",\"version\":1617283796,\"version_id\":\"125e7a034b02f665a4e586702b615a80\",\"signature\":\"b4b8e59820064f3c747d1bb2420ecb16b8597378\",\"width\":5936,\"height\":2368,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:29:56Z\",\"tags\":[],\"bytes\":1267458,\"type\":\"upload\",\"etag\":\"3357ea5a101e244b7ae9b9314b2c7b07\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617283796/testing/DJI_0854_m6jb89.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617283796/testing/DJI_0854_m6jb89.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"DJI_0854\"}]"  ,
+  description: "The steely Jersey City and New York City skylines",
+  location: "Jersey City, NJ",
+  date_taken: "2020-10-05",
+)
+tags94 = [  
+  "city, nyc"
+]
+generate_tags(post94, tags94)
+generate_likes(user_count, Post.last)
+
+
+post100 = Post.create(
+  user: danny,
+  images: "[{\"asset_id\":\"d0a48259ae2622e9f8c6a3ebf873246c\",\"public_id\":\"testing/DJI_0992-HDR_djlcjl\",\"version\":1617284030,\"version_id\":\"df3e350b09bc5588dbd4d0c025ae3e56\",\"signature\":\"0adcd6feb7699e8bea54f3f27ca3812173ddf30f\",\"width\":3482,\"height\":2786,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:33:50Z\",\"tags\":[],\"bytes\":801824,\"type\":\"upload\",\"etag\":\"3acd8e63946e179162a775ab1b8e8fd4\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617284030/testing/DJI_0992-HDR_djlcjl.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617284030/testing/DJI_0992-HDR_djlcjl.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"DJI_0992-HDR\"}]"  ,
+  description: "The Little Red Lighthouse under the George Washington Bridge in New York",
+  location: "New York City, NY",
+  date_taken: "2020-11-06",
+)
+tags100 = [  
+  "lighthouse, nyc, littleredlighthouse"
+]
+generate_tags(post100, tags100)
+generate_likes(user_count, Post.last)
+
+
+post101 = Post.create(
+  user: danny,
+  images: "[{\"asset_id\":\"b992aaac4b00f86f3d6970a8268fd20d\",\"public_id\":\"testing/PANO0001-Pano-7_yn00fd\",\"version\":1617284065,\"version_id\":\"bc6cf1258ac62ac6e2022ce4c96f3bfb\",\"signature\":\"398c11cb7665bcf5c49fa292f98e44f668f2f55b\",\"width\":14248,\"height\":5042,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:34:25Z\",\"tags\":[],\"bytes\":4042873,\"type\":\"upload\",\"etag\":\"ad5fc2bf72f52c9261fc294e4ed3ccbf\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617284065/testing/PANO0001-Pano-7_yn00fd.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617284065/testing/PANO0001-Pano-7_yn00fd.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"PANO0001-Pano-7\"}]" ,
+  description: "Low lying fog in the Hudson Valley made for a magical sight at sunrise",
+  location: "Cornwall, NY",
+  date_taken: "2020-10-21",
+)
+tags101 = [  
+  "sunrise, mountains, clouds"
+]
+generate_tags(post101, tags101)
+generate_likes(user_count, Post.last)
+
+
+post102 = Post.create(
+  user: danny,
+  images: "[{\"asset_id\":\"41e6e71d26634f534431cbefb79c7725\",\"public_id\":\"testing/PANO0001-Pano-9_s3bkee\",\"version\":1617284314,\"version_id\":\"e914e6a3c90f3b1aca2851b064bf7661\",\"signature\":\"0cceb08364a657e9bb21cec1e974654f102e0599\",\"width\":3761,\"height\":4701,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:38:34Z\",\"tags\":[],\"bytes\":1720923,\"type\":\"upload\",\"etag\":\"3fcdda0fd084c384e9357afd7eccd62b\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617284314/testing/PANO0001-Pano-9_s3bkee.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617284314/testing/PANO0001-Pano-9_s3bkee.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"PANO0001-Pano-9\"}]"  ,
+  description: "George Washington Bridge and the Little Red Lighthouse",
+  location: "New York City, NY",
+  date_taken: "2020-11-06",
+)
+tags102 = [  
+  "bridge, nyc, littleredlighthouse, lighthouse"
+]
+generate_tags(post102, tags102)
+generate_likes(user_count, Post.last)
+
+
+post103 = Post.create(
+  user: danny,
+  images: "[{\"asset_id\":\"8587782e140e4b0e3c917759df584fd7\",\"public_id\":\"testing/PANO0021-Pano-2_upifsq\",\"version\":1617284343,\"version_id\":\"4dfd958ca02c3356e60ca65c7b2ceba4\",\"signature\":\"4e43c688ef88a876d4a2c8b6a113c488c5470b2d\",\"width\":13698,\"height\":4985,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:39:03Z\",\"tags\":[],\"bytes\":2333814,\"type\":\"upload\",\"etag\":\"a232562ff8284dbf2e07b1439ac75cc7\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617284343/testing/PANO0021-Pano-2_upifsq.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617284343/testing/PANO0021-Pano-2_upifsq.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"PANO0021-Pano-2\"}]"  ,
+  description: "The sky was on fire tonight over the Delaware River",
+  location: "Bordentown, NJ",
+  date_taken: "2020-11-05",
+)
+tags103 = [  
+  "sunset, redskies, river"
+]
+generate_tags(post103, tags103)
+generate_likes(user_count, Post.last)
+
+
 puts " Posts + Likes + Tags + PostTags Seeded 🏷 🏷 🏷 🏷"
 
 
@@ -1665,7 +1792,6 @@ Post.all.each do |post|
 end
 
 puts "Dates updated"
-
 
 
 puts "✅"
