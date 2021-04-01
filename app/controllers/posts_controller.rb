@@ -77,9 +77,11 @@ class PostsController < ApplicationController
         posts = Post.where( "location ILIKE ?", "%#{params[:q]}%").limit(limit).offset(start_index)
         render json: posts
       when "tags"
-        tags = Tag.where("name ILIKE ?", "%#{params[:q]}%")
-        posts = tags.map{ |tag| tag.posts}
-        render json: posts.flatten
+        # tags = Tag.where("name ILIKE ?", "%#{params[:q]}%")
+        # posts = tags.map{ |tag| tag.posts}
+        posts = Post.joins(:tags).where("name ILIKE ?", "%#{params[:q]}%").distinct.limit(limit).offset(start_index)
+        render json: posts
+        # render json: posts.flatten
       else
         render json: { errors: ["Invalid Search"] }, status: :unprocessable_entity
     end
