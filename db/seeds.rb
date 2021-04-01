@@ -1653,7 +1653,7 @@ post97 = Post.create(
   user: danny,
   images: "[{\"asset_id\":\"7ae6716cfec0b563d071aa51f92d1fca\",\"public_id\":\"testing/DJI_0465-HDR_jo5isn\",\"version\":1617283516,\"version_id\":\"e6c943731be3a1bf10c052e6ed116cb6\",\"signature\":\"181f0e90dd737b312293259222cf42eaf09b4423\",\"width\":3985,\"height\":2989,\"format\":\"jpg\",\"resource_type\":\"image\",\"created_at\":\"2021-04-01T13:25:16Z\",\"tags\":[],\"bytes\":1212282,\"type\":\"upload\",\"etag\":\"b05471249afff9702f1ac199c53addae\",\"placeholder\":false,\"url\":\"http://res.cloudinary.com/daqtqvneu/image/upload/v1617283516/testing/DJI_0465-HDR_jo5isn.jpg\",\"secure_url\":\"https://res.cloudinary.com/daqtqvneu/image/upload/v1617283516/testing/DJI_0465-HDR_jo5isn.jpg\",\"access_mode\":\"public\",\"existing\":false,\"original_filename\":\"DJI_0465-HDR\"}]"  ,
   description: "Sunrise over the Hudson at Bear Mountain during the fall foliage season",
-  location: "Cornwall, NY",
+  location: "Cornwall, NY", 
   date_taken: "2020-10-21",
 )
 tags97 = [  
