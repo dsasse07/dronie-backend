@@ -77,7 +77,7 @@ class PostsController < ApplicationController
         posts = Post.where( "location ILIKE ?", "%#{params[:q]}%").limit(limit).offset(start_index)
         render json: posts
       when "tags"
-        # tags = Tag.where("name ILIKE ?", "%#{params[:q]}%") 
+        # tags = Tag.where("name ILIKE ?", "%#{params[:q]}%")  
         # posts = tags.map{ |tag| tag.posts}
         posts = Post.joins(:tags).where("name ILIKE ?", "%#{params[:q]}%").distinct.limit(limit).offset(start_index)
         render json: posts
