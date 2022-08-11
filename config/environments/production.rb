@@ -36,7 +36,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain.
   config.web_socket_server_url = ENV["REDIS_TLS_URL"] #"wss://dronie-backend.herokuapp.com/cable"
   config.action_cable.mount_path = '/cable'
-  config.action_cable.url = ENV["REDIS_TLS_URL"]#'wss://dronie-backend.herokuapp.com/cable'
+  config.action_cable.url = 'wss://dronie-backend.herokuapp.com/cable'
   config.action_cable.allowed_request_origins = [ 'https://localhost:8100' , /http:\/\/localhost:8100.*/, 'https://dronie.netlify.app', /http:\/\/dronie.netlify.app.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
